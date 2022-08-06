@@ -109,4 +109,3 @@ def getTimezone(time:str, minuteCheck=True):
                 if timezone in zones:
                     break
         return timezone
-
