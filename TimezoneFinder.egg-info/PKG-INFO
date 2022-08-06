@@ -1,0 +1,37 @@
+Metadata-Version: 2.1
+Name: TimezoneFinder
+Version: 0.0.1
+Summary: For finding timezones by the current time there
+Home-page: https://github.com/Strimis10/TimezoneFinder
+Author: Strimis10
+Author-email: strimis10@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENCE
+
+TimezoneFinder
+
+Timezonefinder is a package to get a timezone by the current time
+
+        Gettimezones
+        ##get a list of all timezones where it's a specific time
+
+    import timezonefinder
+    print(timezonefinder.gettimezones24h("20:21"))
+
+    RESULT:
+    ['Africa/Blantyre', 'Africa/Bujumbura', 'Africa/Cairo', 'Africa/Ceuta', 'Africa/Gaborone', 'Africa/Harare', 'Africa/Johannesburg', 'Africa/Juba', 'Africa/Khartoum', 'Africa/Kigali', 'Africa/Lubumbashi', 'Africa/Lusaka', 'Africa/Maputo', 'Africa/Maseru', 'Africa/Mbabane', 'Africa/Tripoli', 'Africa/Windhoek', 'Antarctica/Troll', 'Arctic/Longyearbyen', 'Europe/Amsterdam', 'Europe/Andorra', 'Europe/Belgrade', 'Europe/Berlin', 'Europe/Bratislava', 'Europe/Brussels', 'Europe/Budapest', 'Europe/Busingen', 'Europe/Copenhagen', 'Europe/Gibraltar', 'Europe/Kaliningrad', 'Europe/Ljubljana', 'Europe/Luxembourg', 'Europe/Madrid', 'Europe/Malta', 'Europe/Monaco', 'Europe/Oslo', 'Europe/Paris', 'Europe/Podgorica', 'Europe/Prague', 'Europe/Rome', 'Europe/San_Marino', 'Europe/Sarajevo', 'Europe/Skopje', 'Europe/Stockholm', 'Europe/Tirane', 'Europe/Vaduz', 'Europe/Vatican', 'Europe/Vienna', 'Europe/Warsaw', 'Europe/Zagreb', 'Europe/Zurich']
+
+
+
+        Gettimezone
+        ##get a single timezone where it's a specific times
+    
+    import timezonefinder
+    print(timezonefinder.getTimezone24h("20:21"))
+
+    RESULT:
+    Atlantic/Cape_Verde
