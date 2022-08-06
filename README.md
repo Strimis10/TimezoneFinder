@@ -2,31 +2,46 @@
 
 Timezonefinder is a package that lets you know in what timezones it's a specific time
 
-*getTimezones
+* 24 hour version 
 
-    `from TimezoneFinder import TimezoneFinder24h
-    print(TimezoneFinder24h.getTimezone("13:29"))`
+    * getTimezones
 
-
-
+        GetTimezones is a function that lets you input the current time and it will respond with a list of time zones where it currently is that specific time.
 
 
-        Gettimezones
-        ##get a list of all timezones where it's a specific time
+        `from TimezoneFinder import TimezoneFinder24h
+        print(TimezoneFinder24h.getTimezone("13:29"))`
 
-    from TimezoneFinder import TimezoneFinder24h
-    print(TimezoneFinder24h.getTimezone("13:29"))
 
-    RESULT:
-    ['Africa/Blantyre', 'Africa/Bujumbura', 'Africa/Cairo', 'Africa/Ceuta', 'Africa/Gaborone', 'Africa/Harare', 'Africa/Johannesburg', 'Africa/Juba', 'Africa/Khartoum', 'Africa/Kigali', 'Africa/Lubumbashi', 'Africa/Lusaka', 'Africa/Maputo', 'Africa/Maseru', 'Africa/Mbabane', 'Africa/Tripoli', 'Africa/Windhoek', 'Antarctica/Troll', 'Arctic/Longyearbyen', 'Europe/Amsterdam', 'Europe/Andorra', 'Europe/Belgrade', 'Europe/Berlin', 'Europe/Bratislava', 'Europe/Brussels', 'Europe/Budapest', 'Europe/Busingen', 'Europe/Copenhagen', 'Europe/Gibraltar', 'Europe/Kaliningrad', 'Europe/Ljubljana', 'Europe/Luxembourg', 'Europe/Madrid', 'Europe/Malta', 'Europe/Monaco', 'Europe/Oslo', 'Europe/Paris', 'Europe/Podgorica', 'Europe/Prague', 'Europe/Rome', 'Europe/San_Marino', 'Europe/Sarajevo', 'Europe/Skopje', 'Europe/Stockholm', 'Europe/Tirane', 'Europe/Vaduz', 'Europe/Vatican', 'Europe/Vienna', 'Europe/Warsaw', 'Europe/Zagreb', 'Europe/Zurich']
+        RESULT:
+
+        `
+        ['Africa/Blantyre', 'Africa/Bujumbura', 'Africa/Cairo', 'Africa/Ceuta', 'Africa/Gaborone', 'Africa/Harare', 'Africa/Johannesburg', 'Africa/Juba', 'Africa/Khartoum', 'Africa/Kigali', 'Africa/Lubumbashi', 'Africa/Lusaka', 'Africa/Maputo', 'Africa/Maseru', 'Africa/Mbabane', 'Africa/Tripoli', 'Africa/Windhoek']`
 
 
 
-        Gettimezone
-        ##get a single timezone where it's a specific times
+    * getTimezone
+
+        GetTimezone is a function that lets you input the current time and it will respond with a one time zone where it currently is that specific time.
+        
+        
+            
+        `
+        from TimezoneFinder import TimezoneFinder24h
+        print(TimezoneFinder24h.getTimezone("13:29"))`
+
+
+        RESULT:
+
+        `Atlantic/Cape_Verde`
     
-    from TimezoneFinder import TimezoneFinder24h
-    print(TimezoneFinder24h.getTimezones("13:29"))
+    **Inputs:**
 
-    RESULT:
-    Atlantic/Cape_Verde
+        * Both functions takes an input of the time as a string with a colon deviding hours from minutes.
+
+        
+        * Both has a minuteCeck input that is turned on by default but by setting it as False it skips the checks for minutes and only looks for hours, wich means that you don't need to input the CURRENT minute.  
+
+
+
+* 12 hour version

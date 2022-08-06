@@ -8,7 +8,7 @@ zones = ['Africa/Abidjan', 'Africa/Addis_Ababa', 'Europe/London', 'Europe/Stockh
 
 
 ##get a list of all timezones where it's a specific time
-def getTimezones(time:str):
+def getTimezones(time:str, minuteCheck=True):
     
     listOfTimeZones = []
 
@@ -16,7 +16,7 @@ def getTimezones(time:str):
     if len(time) != 5:
         raise Exception("ERROR: time not formated correctly (##:##)")
     num = 0
-    minute = ""
+
     for character in time:
         if num == 2:
             if character != ":":
@@ -24,25 +24,37 @@ def getTimezones(time:str):
         else:
             if not character.isdigit():
                 raise Exception("ERROR: time not formated correctly (##:##)")
-        if num > 2:
-            minute += character
-
         num += 1
     
-    ##Make sure that the time is the current time
-    currentDateAndTime = datetime.now()
-    currentTime = currentDateAndTime.strftime("%M")
-    if not minute == currentTime:
-        raise Exception("ERROR: Time is not correct, minutes must match current")
+    theTime = time.split(":")
+    minute = theTime[1]
+    hour = theTime[0]
 
+    ##Make sure that the time is the current time
+    if minuteCheck != False:
+        currentDateAndTime = datetime.now()
+        currentTime = currentDateAndTime.strftime("%M")
+        if not minute == currentTime:
+            raise Exception("ERROR: Time is not correct, minutes must match current")
+    
     ##check in what timesones the time matches
-    for timezone in pytz.common_timezones:
-        timezonee = pytz.timezone(timezone)
-        currentDateAndTime = datetime.now(timezonee)
-        currentTime = currentDateAndTime.strftime("%H:%M")
-        if time == currentTime:
-            listOfTimeZones.append(timezone)
-    return listOfTimeZones
+    if minuteCheck != False:
+        for timezone in pytz.common_timezones:
+            timezonee = pytz.timezone(timezone)
+            currentDateAndTime = datetime.now(timezonee)
+            currentTime = currentDateAndTime.strftime("%H:%M")
+            if time == currentTime:
+                listOfTimeZones.append(timezone)
+        return listOfTimeZones
+        
+    else:
+        for timezone in pytz.common_timezones:
+            timezonee = pytz.timezone(timezone)
+            currentDateAndTime = datetime.now(timezonee)
+            currentTime = currentDateAndTime.strftime("%H")
+            if hour == currentTime:
+                listOfTimeZones.append(timezone)
+        return listOfTimeZones
             
 
 
@@ -50,14 +62,13 @@ def getTimezones(time:str):
 
 
 ##get a single timezone where it's a specific times
-def getTimezone(time:str):
+def getTimezone(time:str, minuteCheck=True):
     
 
     ##make sure the input is formated correctly
     if len(time) != 5:
         raise Exception("ERROR: time not formated correctly (##:##)")
     num = 0
-    minute = ""
     for character in time:
         if num == 2:
             if character != ":":
@@ -65,24 +76,37 @@ def getTimezone(time:str):
         else:
             if not character.isdigit():
                 raise Exception("ERROR: time not formated correctly (##:##)")
-        if num > 2:
-            minute += character
-
         num += 1
     
+    theTime = time.split(":")
+    minute = theTime[1]
+    hour = theTime[0]
+    
     ##Make sure that the time is the current time
-    currentDateAndTime = datetime.now()
-    currentTime = currentDateAndTime.strftime("%M")
-    if not minute == currentTime:
-        raise Exception("ERROR: Time is not correct, minutes must match current")
+    if minuteCheck != False:
+        currentDateAndTime = datetime.now()
+        currentTime = currentDateAndTime.strftime("%M")
+        if not minute == currentTime:
+            raise Exception("ERROR: Time is not correct, minutes must match current")
+
 
     ##check in what timesones the time matches
-    for timezone in pytz.common_timezones:
-        timezonee = pytz.timezone(timezone)
-        currentDateAndTime = datetime.now(timezonee)
-        currentTime = currentDateAndTime.strftime("%H:%M")
-        if time == currentTime:
-            if timezone in zones:
-                break
-    return timezone
+    if minuteCheck != False:
+        for timezone in pytz.common_timezones:
+            timezonee = pytz.timezone(timezone)
+            currentDateAndTime = datetime.now(timezonee)
+            currentTime = currentDateAndTime.strftime("%H:%M")
+            if time == currentTime:
+                if timezone in zones:
+                    break
+        return timezone
+    else:
+        for timezone in pytz.common_timezones:
+            timezonee = pytz.timezone(timezone)
+            currentDateAndTime = datetime.now(timezonee)
+            currentTime = currentDateAndTime.strftime("%H")
+            if hour == currentTime:
+                if timezone in zones:
+                    break
+        return timezone
 
