@@ -2,6 +2,7 @@ LICENCE
 README.md
 pyproject.toml
 setup.cfg
+TimezoneFinder/TimezoneFinder12h.py
 TimezoneFinder/TimezoneFinder24h.py
 TimezoneFinder/__init__.py
 TimezoneFinder.egg-info/PKG-INFO

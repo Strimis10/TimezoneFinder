@@ -16,32 +16,46 @@ License-File: LICENCE
 
 Timezonefinder is a package that lets you know in what timezones it's a specific time
 
-* getTimezones
+* 24 hour version 
 
-    GetTimezones is a function that let's you input the current time and it will respond with a list of time zones where it currently is that specific time 
+    * getTimezones
 
-    `from TimezoneFinder import TimezoneFinder24h
-    print(TimezoneFinder24h.getTimezone("13:29"))`
-
+        GetTimezones is a function that lets you input the current time and it will respond with a list of time zones where it currently is that specific time.
 
 
+        `from TimezoneFinder import TimezoneFinder24h
+        print(TimezoneFinder24h.getTimezone("13:29"))`
 
 
+        RESULT:
+
+        `
+        ['Africa/Blantyre', 'Africa/Bujumbura', 'Africa/Cairo', 'Africa/Ceuta', 'Africa/Gaborone', 'Africa/Harare', 'Africa/Johannesburg', 'Africa/Juba', 'Africa/Khartoum', 'Africa/Kigali', 'Africa/Lubumbashi', 'Africa/Lusaka', 'Africa/Maputo', 'Africa/Maseru', 'Africa/Mbabane', 'Africa/Tripoli', 'Africa/Windhoek']`
+
+
+
+    * getTimezone
+
+        GetTimezone is a function that lets you input the current time and it will respond with a one time zone where it currently is that specific time.
         
+        
+            
+        `
+        from TimezoneFinder import TimezoneFinder24h
+        print(TimezoneFinder24h.getTimezone("13:29"))`
+
+
+        RESULT:
+
+        `Atlantic/Cape_Verde`
+    
+    **Inputs:**
+
+    * Both functions takes an input of the time as a string with a colon deviding hours from minutes.
 
     
-
-    RESULT:
-    `
-    ['Africa/Blantyre', 'Africa/Bujumbura', 'Africa/Cairo', 'Africa/Ceuta', 'Africa/Gaborone', 'Africa/Harare', 'Africa/Johannesburg', 'Africa/Juba', 'Africa/Khartoum', 'Africa/Kigali', 'Africa/Lubumbashi', 'Africa/Lusaka', 'Africa/Maputo', 'Africa/Maseru', 'Africa/Mbabane', 'Africa/Tripoli', 'Africa/Windhoek']`
+    * Both has a minuteCeck input that is turned on by default but by setting it as False it skips the checks for minutes and only looks for hours, wich means that you don't need to input the **current** minute.  
 
 
 
-        Gettimezone
-        ##get a single timezone where it's a specific times
-    
-    from TimezoneFinder import TimezoneFinder24h
-    print(TimezoneFinder24h.getTimezones("13:29"))
-
-    RESULT:
-    Atlantic/Cape_Verde
+* 12 hour version

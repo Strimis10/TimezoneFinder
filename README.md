@@ -45,3 +45,11 @@ Timezonefinder is a package that lets you know in what timezones it's a specific
 
 
 * 12 hour version
+
+    `from TimezoneFinder import TimezoneFinder12h
+   print(TimezoneFinder12h.getTimezone(time="00:15", AmPm="am"))`
+
+   RESULT:
+    `Antarctica/Casey`
+
+    Everything is the same as the 24h version exccept that you need to specify AM or PM usigng the AmPm input in the functions
