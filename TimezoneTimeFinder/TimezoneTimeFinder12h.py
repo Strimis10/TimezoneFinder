@@ -6,9 +6,10 @@ zones = ['Africa/Abidjan', 'Africa/Addis_Ababa', 'Europe/London', 'Europe/Stockh
     'America/Atikokan', 'America/Belize', 'America/Creston', 'America/Miquelon', 'Antarctica/Casey', 'Antarctica/Davis', 'Antarctica/DumontDUrville', 'Antarctica/Mawson', 
     'Antarctica/McMurdo', 'Antarctica/Vostok', 'Asia/Baku', 'Asia/Brunei', 'Asia/Chita', 'Atlantic/Cape_Verde', 'Pacific/Apia', 'Pacific/Honolulu']
 
+timeOfDay = ["am", "pm"]
 
 ##get a list of all timezones where it's a specific time
-def getTimezones(time:str, minuteCheck=True):
+def getTimezones(time:str, AmPm:str, minuteCheck=True):
     
     listOfTimeZones = []
 
@@ -29,6 +30,18 @@ def getTimezones(time:str, minuteCheck=True):
     theTime = time.split(":")
     minute = theTime[1]
     hour = theTime[0]
+
+
+    AmPm = AmPm.lower()
+    if AmPm in timeOfDay:
+        if AmPm == "am":
+            if hour == "12":
+                hour == "00"
+        else:
+            hour = int(hour)+12
+
+    
+    time = f"{hour}:{minute}"
 
     ##Make sure that the time is the current time
     if minuteCheck != False:
@@ -52,7 +65,7 @@ def getTimezones(time:str, minuteCheck=True):
             timezonee = pytz.timezone(timezone)
             currentDateAndTime = datetime.now(timezonee)
             currentTime = currentDateAndTime.strftime("%H")
-            if hour == currentTime:
+            if str(hour) == currentTime:
                 listOfTimeZones.append(timezone)
         return listOfTimeZones
             
@@ -62,7 +75,7 @@ def getTimezones(time:str, minuteCheck=True):
 
 
 ##get a single timezone where it's a specific times
-def getTimezone(time:str, minuteCheck=True):
+def getTimezone(time:str, AmPm:str, minuteCheck=True):
     
 
     ##make sure the input is formated correctly
@@ -81,7 +94,18 @@ def getTimezone(time:str, minuteCheck=True):
     theTime = time.split(":")
     minute = theTime[1]
     hour = theTime[0]
+
+    AmPm = AmPm.lower()
+    if AmPm in timeOfDay:
+        if AmPm == "am":
+            if hour == "12":
+                hour == "00"
+        else:
+            hour = int(hour)+12
     
+
+    time = f"{hour}:{minute}"
+
     ##Make sure that the time is the current time
     if minuteCheck != False:
         currentDateAndTime = datetime.now()
@@ -105,7 +129,7 @@ def getTimezone(time:str, minuteCheck=True):
             timezonee = pytz.timezone(timezone)
             currentDateAndTime = datetime.now(timezonee)
             currentTime = currentDateAndTime.strftime("%H")
-            if hour == currentTime:
+            if str(hour) == currentTime:
                 if timezone in zones:
                     break
         return timezone

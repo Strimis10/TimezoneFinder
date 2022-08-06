@@ -1,6 +1,6 @@
-# TimezioneFinder
+# TimezoneTimeFinder
 
-Timezonefinder is a package that lets you know in what timezones it's a specific time
+TimezoneTimeFinder is a package that lets you know in what timezones it's a specific time
 
 * 24 hour version 
 
@@ -11,8 +11,8 @@ Timezonefinder is a package that lets you know in what timezones it's a specific
         GetTimezones is a function that lets you input the current time and it will respond with a list of time zones where it currently is that specific time.
 
 
-        `from TimezoneFinder import TimezoneFinder24h
-        print(TimezoneFinder24h.getTimezone("13:29"))`
+        `from TimezoneTimeFinder import TimezoneTimeFinder24h
+        print(TimezoneTimeFinder24h.getTimezone("13:29"))`
 
 
         RESULT:
@@ -33,8 +33,8 @@ Timezonefinder is a package that lets you know in what timezones it's a specific
         
             
         `
-        from TimezoneFinder import TimezoneFinder24h
-        print(TimezoneFinder24h.getTimezone("13:29"))`
+        from TimezoneTimeFinder import TimezoneTimeFinder24h
+        print(TimezoneTimeFinder24h.getTimezone("13:29"))`
 
 
         RESULT:
@@ -60,8 +60,8 @@ Timezonefinder is a package that lets you know in what timezones it's a specific
         
         </br>
 
-        `from TimezoneFinder import TimezoneFinder12h
-        print(TimezoneFinder12h.getTimezones(time="00:20", AmPm="am"))`
+        `from TimezoneTimeFinder import TimezoneTimeFinder12h
+        print(TimezoneTimeFinder12h.getTimezones(time="00:20", AmPm="am"))`
         
         
         <br/>RESULT: <br/> `['Antarctica/Casey', 'Asia/Magadan', 'Asia/Sakhalin', 'Asia/Srednekolymsk', 'Pacific/Bougainville', 'Pacific/Efate', 'Pacific/Guadalcanal', 'Pacific/Kosrae', 'Pacific/Norfolk', 'Pacific/Noumea', 'Pacific/Pohnpei']` 
@@ -73,8 +73,8 @@ Timezonefinder is a package that lets you know in what timezones it's a specific
 
     * getTimezone
 
-        </br>`from TimezoneFinder import TimezoneFinder12h
-    print(TimezoneFinder12h.getTimezone(time="00:15", AmPm="am"))`
+        </br>`from TimezoneTimeFinder import TimezoneTimeFinder12h
+    print(TimezoneTimeFinder12h.getTimezone(time="00:15", AmPm="am"))`
     
     
         </br>RESULT: </br> `Antarctica/Casey`  
