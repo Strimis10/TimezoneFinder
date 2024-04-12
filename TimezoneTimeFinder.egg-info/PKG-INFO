@@ -2,7 +2,7 @@ Metadata-Version: 2.1
 Name: TimezoneTimeFinder
 Version: 0.0.1
 Summary: For finding timezones by the current time there
-Home-page: https://github.com/Strimis10/TimezoneFinder
+Home-page: https://github.com/Strimis10/TimezoneTimeFinder
 Author: Strimis10
 Author-email: strimis10@gmail.com
 Classifier: Programming Language :: Python :: 3

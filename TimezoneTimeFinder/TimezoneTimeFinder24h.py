@@ -1,6 +1,6 @@
 import pytz
 from datetime import datetime
-       
+
 
 zones = ['Africa/Abidjan', 'Africa/Addis_Ababa', 'Europe/London', 'Europe/Stockholm', 'America/Adak', 'America/Anchorage', 'America/Anguilla', 'America/Araguaina', 
     'America/Atikokan', 'America/Belize', 'America/Creston', 'America/Miquelon', 'Antarctica/Casey', 'Antarctica/Davis', 'Antarctica/DumontDUrville', 'Antarctica/Mawson', 
