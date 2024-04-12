@@ -12,7 +12,7 @@ TimezoneTimeFinder is a package that lets you know in what timezones it's a spec
 
 
         `from TimezoneTimeFinder import TimezoneTimeFinder24h
-        print(TimezoneTimeFinder24h.getTimezone("13:29"))`
+        print(TimezoneTimeFinder24h.getTimezones("13:29"))`
 
 
         RESULT:
@@ -46,7 +46,7 @@ TimezoneTimeFinder is a package that lets you know in what timezones it's a spec
     * Both functions takes an input of the time as a string with a colon deviding hours from minutes.
 
     
-    * Both has a minuteCeck input that is turned on by default but by setting it as False it skips the checks for minutes and only looks for hours, wich means that you don't need to input the **current** minute.  
+    * Both has a minuteCheck input that is turned on by default but by setting it as False it skips the checks for minutes and only looks for hours, wich means that you don't need to input the **current** minute.  
     </br>
     </br>
     </br>
